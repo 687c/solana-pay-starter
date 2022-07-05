@@ -11,9 +11,8 @@ const TWITTER_HANDLE = "jimii_47";
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 const App = () => {
-	// const { PublicKey } = useWallet();
-	const PublicKey = '214bewgwe';
-	const wallet = useWallet();
+	const { PublicKey } = useWallet();
+	// const wallet = useWallet();
 
 	const [isLoading, setIsLoading] = useState(true);
 	const [products, setProducts] = useState();
@@ -21,7 +20,6 @@ const App = () => {
 	console.log("this is the public key", PublicKey);
 
 	useEffect(() => {
-		console.log("this the wallet", wallet);
 		if (PublicKey) {
 			fetch(`/api/fetchProduct`)
 				.then(response => response.json())
